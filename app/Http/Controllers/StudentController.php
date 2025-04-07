@@ -10,7 +10,7 @@ class StudentController extends Controller
 
         $students= student::all();
         
-        return view("student.index");
+        return view("student.index",["students"=>$students]);
     }
 
     public function createForm() {
@@ -30,5 +30,10 @@ class StudentController extends Controller
         return redirect()->route("student.index");
 
                
+    }
+    public function delete($id){
+
+        
+
     }
 }

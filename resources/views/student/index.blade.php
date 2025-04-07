@@ -35,6 +35,35 @@
     
     <div class="container">
       <a href="/students/create">Create Student</a>
+
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+         @foreach ($students as $student)
+           <tr>
+              <th scope="row">{{$student->id}}</th>
+              <td>{{$student->name}}</td>
+              <td>{{$student->age}}</td>
+             <td>{{$student->city}}</td>
+             <td>
+              <div>
+                <a class="btn btn-info btn-sm" href="#">Update</a>
+                <a class="btn btn-danger btn-sm" href="#">Delete</a>
+              </div>
+             </td>
+           </tr>
+         @endforeach
+          
+        </tbody>
+      </table>
     </div>
 
     
