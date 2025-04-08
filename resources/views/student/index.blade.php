@@ -34,12 +34,24 @@
     </nav>
     
     <div class="container">
-      <a href="/students/create">Create Student</a>
+      <a class="btn btn-outline-danger" href="/students/create">Create Student</a>
+
+      @if(session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+     </div>
+      @endif
+      @if(session('error'))
+      <div class="alert alert-denger">
+        {{ session('error') }}
+     </div>
+    @endif
 
       <table class="table table-light">
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">City</th>
@@ -50,6 +62,7 @@
          @foreach ($students as $student)
            <tr>
               <th scope="row">{{$student->id}}</th>
+              <td>{{$student->image}}</td>
               <td>{{$student->name}}</td>
               <td>{{$student->age}}</td>
              <td>{{$student->city}}</td>

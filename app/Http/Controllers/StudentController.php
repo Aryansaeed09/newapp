@@ -37,8 +37,9 @@ class StudentController extends Controller
 
         if($student != NULL){
         $student->delete($id);
-        return redirect()->route("student.index");
+        return redirect()->route("student.index")->with("success","One Studend Deleted Successfully ");
 
         }
+        return redirect()->route("student.index")->with("error","Student Are Not Found ");
     }
 }
