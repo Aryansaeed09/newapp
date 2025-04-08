@@ -56,7 +56,7 @@
              <td>
               <div>
                 <a class="btn btn-info btn-sm" href="#">Update</a>
-                <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                <a class="btn btn-danger btn-sm" href="{{route('student.delete',$student->id)}}">Delete</a>
               </div>
              </td>
            </tr>

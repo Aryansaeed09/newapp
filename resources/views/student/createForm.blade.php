@@ -16,12 +16,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="/students">Students Dashboard</a>
             </li>
-           
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -63,6 +65,11 @@
             <!-- Age Field -->
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
+                @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
+            
+            
                 <input type="number" name="age" class="form-control" id="age" placeholder="Enter your age">
             </div>
 
