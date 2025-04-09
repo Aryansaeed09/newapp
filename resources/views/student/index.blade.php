@@ -62,7 +62,7 @@
          @foreach ($students as $student)
            <tr>
               <th scope="row">{{$student->id}}</th>
-              <td>{{$student->image}}</td>
+              <td><img src="{{ asset('storage/' . $student->image) }}" width="50px"></td>
               <td>{{$student->name}}</td>
               <td>{{$student->age}}</td>
              <td>{{$student->city}}</td>
