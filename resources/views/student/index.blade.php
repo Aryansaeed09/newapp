@@ -34,7 +34,7 @@
     </nav>
     
     <div class="container">
-      <a class="btn btn-outline-danger" href="/students/create">Create Student</a>
+      <a class="btn btn-outline-danger my-3" href="/students/create">Create Student</a>
 
       @if(session('success'))
       <div class="alert alert-success">
@@ -46,8 +46,8 @@
         {{ session('error') }}
      </div>
     @endif
-
-      <table class="table table-light">
+    
+      <table class="table table-danger table-bordered border-danger align-middle my-4">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -77,7 +77,7 @@
           
         </tbody>
       </table>
-    </div>
+   
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
