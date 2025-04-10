@@ -47,7 +47,7 @@
      </div>
     @endif
     
-      <table class="table table-danger table-bordered border-danger align-middle my-4">
+      <table class="table table-danger table-bordered align-middle my-4">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -68,7 +68,7 @@
              <td>{{$student->city}}</td>
              <td>
               <div>
-                <a class="btn btn-info btn-sm" href="#">Update</a>
+                <a class="btn btn-info btn-sm" href="{{route('student.update',$student->id)}}">Update</a>
                 <a class="btn btn-danger btn-sm" href="{{route('student.delete',$student->id)}}">Delete</a>
               </div>
              </td>

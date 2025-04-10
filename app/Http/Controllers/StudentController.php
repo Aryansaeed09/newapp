@@ -52,4 +52,24 @@ class StudentController extends Controller
         return redirect()->route("student.index")->with("success","One Studend Deleted Successfully ");
     }
        
+    public function update($id) {
+
+        $student= Student::findOrFail($id);
+
+        return view("student.update",["students"=>$student]);
+
+               
+    }
+
+    public function edit(Request $request,$id) {
+
+        $student= Student::findOrFail($id);
+
+        $request->validate([
+            'name' => "required|max:60",
+            'age' => 'required',
+            'image' => 'nullable|mimes:jpg,jpeg,png|max:2048'
+
+        ]);
+    }
 }

@@ -45,50 +45,55 @@
            </ul>
           </div>
          @endif
-        <form method="POST" action="{{ route("student.store") }}" enctype="multipart/form-data">
+         <form method="POST" action="{{ route("student.store") }}" enctype="multipart/form-data">
           @csrf
             <!-- Name Field -->
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
+                <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="name" placeholder="Enter your name">
+                
                 @error('name')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
                 @enderror
-                <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" >
+
             </div>
 
-                <!-- image Field -->
-                <div class="mb-3">
+            <!-- file Field -->
+            <div class="mb-3">
                 <label for="image" class="form-label">Student Image</label>
-                <input type="file" name="image" class="form-control" id="image" accept="image/*" >
+                <input type="file" name="image" class="form-control" id="image" accept="image/*">
+               
             </div>
 
             <!-- Age Field -->
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
-                 @enderror
-            
-            
-                <input type="number" name="age" class="form-control" id="age" placeholder="Enter your age">
+                <input type="number" value="{{ old('age') }}"  name="age" class="form-control" id="age" placeholder="Enter your age">
+                @error('age')
+                <div class="alert alert-danger">
+                  {{ $message }}
+              </div>
+                @enderror
             </div>
 
             <!-- City Field (Dropdown) -->
             <div class="mb-3">
                 <label for="city" class="form-label">City</label>
-                <select class="form-select" id="city" name="city" >
+                <select class="form-select" id="city" name="city">
                     <option value="" selected disabled>Select your city</option>
-                    <option value="Lodhran">Lodhran</option>
-                    <option value="Multan">Multan</option>
-                    <option value="Karachi">Karachi</option>
-                    <option value="Bahawalpur">Bahawalpur</option>
+                    <option value="Lodhran" @selected(old('city') == 'Lodhran') >Lodhran</option>
+                    <option value="Multan" @selected(old('city') == 'Multan')>Multan</option>
+                    <option value="Karachi" @selected(old('city') == 'Karachi')>Karachi</option>
+                    <option value="Bahawalpur" @selected(old('city') == 'Bahawalpur')>Bahawalpur</option>
                 </select>
             </div>
 
             <!-- Course Field (Dropdown) -->
             <div class="mb-3">
                 <label for="course_id" class="form-label">Course</label>
-                <select class="form-select" id="course_id" name="course_id" >
+                <select class="form-select" id="course_id" name="course_id" required>
                     <option value="" selected disabled>Select your course</option>
                     <option value="1">Graphic Designing</option>
                     <option value="3">Full Stack Development</option>
